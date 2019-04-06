@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="balance"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{12FBF8B2-2283-41D6-A591-AE4FDD4E1F9A}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{1E16676A-A4BC-4AD8-B53B-0DA1A6CC92CB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAChIPPWk9fxgWkneq7CFKu7AAAAAASAAACgAAAAEAAAAObDTQCvmLqmSGTAMr8711MQAAAAWpxLWm3JArFSEZl2iWO2whQAAACYu1jz0UFBAaUI6di8SMTdj1KcZA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAKZ9sCS1N6jGTGP7VtjzvgAAAAAASAAACgAAAAEAAAAKgewB+gVI16oewebC011bIQAAAAQUfzup6lr92Cnz8ROaQeohQAAAAAe2vlktqUb0hHmLL+hDmNvGCvBg</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABxFYraxn6VDZm+gcf12p8qAAAAAASAAACgAAAAEAAAAOdgh/ytbn2OITKF0mCIbDQQAAAAZE6yQ9YxMWSRFxtWMBdjJBQAAAADR+i+8oSEAYyMyMBBQmgaqFBNNQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAawPJCnX7FlCeJVi8Fm7q6AAAAAASAAACgAAAAEAAAAIt1p/uVMvuxtiOTfc0npk4QAAAAblz5bngLAp3mfW9eyD2SxBQAAACVI3R4G+nM80H/gt3sAbppgvT9Hw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -473,6 +473,41 @@
           SQLTask:SqlStatementSource="truncate table [Projekt120190406].[dbo].[ADO NET Destination_balance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B5811975-755E-4F0C-B2FE-041B8651AA04}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BC3EB64E-A948-4AF2-B81F-0113851B820B}"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[Log]([DataWywolania],[Uzytkownik],[NazwaPaczki]) VALUES(?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="DataWywolania"
+            SQLTask:DtsVariableName="System::CreationDate"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="Uzytkownik"
+            SQLTask:DtsVariableName="System::CreatorName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="NazwaPaczki"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -483,6 +518,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Data Flow Task" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E85A4965-7454-4C8B-82D5-6A3A1E1A48C0}"
+      DTS:From="Package\Data Flow Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute SQL Task 1" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -495,29 +538,55 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task"
-          TopLeft="115.428573394308,144.988237327523" />
+          TopLeft="114.285716231988,143.764707898599" />
         <NodeLayout
           Size="162.4,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="110.285716163869,21.4117650061743" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="191.057144779089,63.0117650061743">
+          TopLeft="190.485716197929,63.0117650061743">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,81.9764723213486"
+              EndConnector="0,80.7529428924244"
               Start="0,0"
-              End="0,74.4764723213486">
+              End="0,73.2529428924244">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,74.4764723213486" />
+                    End="0,73.2529428924244" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="108.000001839229,231.247062066682" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="191.742859035609,185.364707898599">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.8823541680835"
+              Start="0,0"
+              End="0,38.3823541680835">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.3823541680835" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
