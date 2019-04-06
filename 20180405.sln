@@ -9,6 +9,12 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Project01_BasicCFTasks", ".
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "20180405_zad2", "20180405_zad2\20180405_zad2.dtproj", "{A1A8F409-DAFB-41C0-A1FE-FCBB1AE6DE04}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "20190406_zad3", "20190406_zad3\20190406_zad3.dtproj", "{19663892-DE1A-4B77-9098-01CE4D3D9D4F}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Project01_VariablesAndOtherTasks", "..\..\..\..\..\Local\_dokumenty\_Studia\70767DataWarehouse-master\Lesson07 SSIS Basics03\_VSProjects\VSVariablesAndMoreDFTasks\Project01_VariablesAndOtherTasks\Project01_VariablesAndOtherTasks.dtproj", "{37BF5B55-F81C-441D-B43A-95524691C060}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Project02_SCDType2", "..\..\..\..\..\Local\_dokumenty\_Studia\70767DataWarehouse-master\Lesson07 SSIS Basics03\_VSProjects\VSVariablesAndMoreDFTasks\Project02_SCDType2\Project02_SCDType2.dtproj", "{BFEF5939-2722-4EA8-8522-4B58EEEDB54F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -20,11 +26,17 @@ Global
 		{C80D1D54-4641-4E6C-98AE-9F5A0C0555EF}.Development|Default.Build.0 = Development
 		{A1A8F409-DAFB-41C0-A1FE-FCBB1AE6DE04}.Development|Default.ActiveCfg = Development
 		{A1A8F409-DAFB-41C0-A1FE-FCBB1AE6DE04}.Development|Default.Build.0 = Development
+		{19663892-DE1A-4B77-9098-01CE4D3D9D4F}.Development|Default.ActiveCfg = Development
+		{19663892-DE1A-4B77-9098-01CE4D3D9D4F}.Development|Default.Build.0 = Development
+		{37BF5B55-F81C-441D-B43A-95524691C060}.Development|Default.ActiveCfg = Development
+		{37BF5B55-F81C-441D-B43A-95524691C060}.Development|Default.Build.0 = Development
+		{BFEF5939-2722-4EA8-8522-4B58EEEDB54F}.Development|Default.ActiveCfg = Development
+		{BFEF5939-2722-4EA8-8522-4B58EEEDB54F}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2C692855-4753-4BA0-AB4F-B15D46FF40E6}
+		SolutionGuid = {0B3CC13E-D998-4C84-9B82-EA72A93F6842}
 	EndGlobalSection
 EndGlobal
