@@ -7,6 +7,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "20180405", "20180405\201804
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Project01_BasicCFTasks", "..\..\..\..\..\Local\_dokumenty\_Studia\70767DataWarehouse-master\Lesson06 SSIS Basics02\_VSProjects\Project01_BasicCFTasks\Project01_BasicCFTasks.dtproj", "{C80D1D54-4641-4E6C-98AE-9F5A0C0555EF}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "20180405_zad2", "20180405_zad2\20180405_zad2.dtproj", "{A1A8F409-DAFB-41C0-A1FE-FCBB1AE6DE04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -16,6 +18,8 @@ Global
 		{6325D105-D1AE-46C1-9F17-E7706744D331}.Development|Default.Build.0 = Development
 		{C80D1D54-4641-4E6C-98AE-9F5A0C0555EF}.Development|Default.ActiveCfg = Development
 		{C80D1D54-4641-4E6C-98AE-9F5A0C0555EF}.Development|Default.Build.0 = Development
+		{A1A8F409-DAFB-41C0-A1FE-FCBB1AE6DE04}.Development|Default.ActiveCfg = Development
+		{A1A8F409-DAFB-41C0-A1FE-FCBB1AE6DE04}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
