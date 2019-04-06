@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="car"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{7E77ABA5-23F0-4A3E-B414-7781EAA1F496}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{324F1D61-631B-4D44-8592-D1CC489B924D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAATIItgefRJrvrGOzNxmT0/AAAAAASAAACgAAAAEAAAAJaLmD9M7cRiLXzV4fNRG+wQAAAAD+TayLUU34f9b98HVRo3JBQAAAC/H2mSupniyXDMph59FIbQ0O75AQ</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACIpCu5KzlhdVIsFX2Ac907AAAAAASAAACgAAAAEAAAAF9xAoE44cnBD0SspRBNaxAQAAAAz/k9b4pTh/zWWgetuYemeRQAAAAMQIY3G2qBgFbBHdK+lW+ex1uWDw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAASwQBlDdkLDgjbUWgQbLZhAAAAAASAAACgAAAAEAAAAGHrufgr8nIUVIUe4SIYwNoQAAAADbZCy+TBXaTQRCbIXVerVRQAAABt/hkK0tRmlCVhsF/sfi+b6PK5IA</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAA6UknUKOiJiJsEBR0huEUBAAAAAASAAACgAAAAEAAAAJu0y/zvcGkwx9we3YJoML4QAAAAmh/jpLf2GS8vROPb31HfixQAAACIq7ulygjkze1rG1ClqbZgW5LTAA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -617,22 +617,22 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{BC3EB64E-A948-4AF2-B81F-0113851B820B}"
+          SQLTask:Connection="{330CE15B-F825-4CA2-901E-5D2880E3737D}"
           SQLTask:SqlStatementSource="INSERT INTO [dbo].[Log]([DataWywolania],[Uzytkownik],[NazwaPaczki]) VALUES(?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="DataWywolania"
+            SQLTask:ParameterName="@DataWywolania"
             SQLTask:DtsVariableName="System::CreationDate"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="7"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Uzytkownik"
+            SQLTask:ParameterName="@Uzytkownik"
             SQLTask:DtsVariableName="System::CreatorName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="NazwaPaczki"
+            SQLTask:ParameterName="@NazwaPaczki"
             SQLTask:DtsVariableName="System::PackageName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
@@ -679,6 +679,10 @@
           Size="162.4,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="45.1428579116354,28.1411768652576" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="45.1428579116354,216.611766318879" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="126.771429398595,69.7411768652576">
@@ -701,10 +705,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Execute SQL Task 1"
-          TopLeft="45.1428579116354,216.611766318879" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="129.171429398595,156.611766318879">

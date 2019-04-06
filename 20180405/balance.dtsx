@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="balance"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{1E16676A-A4BC-4AD8-B53B-0DA1A6CC92CB}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{54D1E9B7-25EE-4F3D-BEF3-83DC2878C14D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAKZ9sCS1N6jGTGP7VtjzvgAAAAAASAAACgAAAAEAAAAKgewB+gVI16oewebC011bIQAAAAQUfzup6lr92Cnz8ROaQeohQAAAAAe2vlktqUb0hHmLL+hDmNvGCvBg</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABZAcHlRfv2VNzGJroisP0KAAAAAASAAACgAAAAEAAAAN6fDdsoY+FT30NqbGEnAPUQAAAAv6dlcem811/2sbYRQbCNpRQAAAA/vSrhd4TVG9ClLw/wLOLnHnAknA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -42,7 +42,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAAAawPJCnX7FlCeJVi8Fm7q6AAAAAASAAACgAAAAEAAAAIt1p/uVMvuxtiOTfc0npk4QAAAAblz5bngLAp3mfW9eyD2SxBQAAACVI3R4G+nM80H/gt3sAbppgvT9Hw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAqLG2d/L7Jk2fBPCSbjsPqAAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAABbQuK2dI7t19TVVBPdhNX2AAAAAASAAACgAAAAEAAAANfsfTgWesWCq4cohAeUgcwQAAAADqSxKSc6oHQ/FAG3/YopRRQAAACJt4z9RwM3/Wh4FJf5OBq92SayQA</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -488,19 +488,19 @@
           SQLTask:Connection="{BC3EB64E-A948-4AF2-B81F-0113851B820B}"
           SQLTask:SqlStatementSource="INSERT INTO [dbo].[Log]([DataWywolania],[Uzytkownik],[NazwaPaczki]) VALUES(?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="DataWywolania"
+            SQLTask:ParameterName="@DataWywolania"
             SQLTask:DtsVariableName="System::CreationDate"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="7"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="Uzytkownik"
+            SQLTask:ParameterName="@Uzytkownik"
             SQLTask:DtsVariableName="System::CreatorName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
             SQLTask:ParameterSize="-1" />
           <SQLTask:ParameterBinding
-            SQLTask:ParameterName="NazwaPaczki"
+            SQLTask:ParameterName="@NazwaPaczki"
             SQLTask:DtsVariableName="System::PackageName"
             SQLTask:ParameterDirection="Input"
             SQLTask:DataType="129"
@@ -547,6 +547,10 @@
           Size="162.4,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="110.285716163869,21.4117650061743" />
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Execute SQL Task 1"
+          TopLeft="108.000001839229,231.247062066682" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="190.485716197929,63.0117650061743">
@@ -569,10 +573,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="172,41.6"
-          Id="Package\Execute SQL Task 1"
-          TopLeft="108.000001839229,231.247062066682" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="191.742859035609,185.364707898599">
@@ -602,7 +602,7 @@
     design-time-name="Package\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Data Flow Task\Flat File Source"
@@ -642,7 +642,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
